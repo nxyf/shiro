@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h1>欢迎访问首页</h1>
+<!--身份信息-->
+<span shiro:principal></span>
+<br>
+<!--认证之后-->
+<span shiro:authenticated="">认证之后展示</span>
+<br>
+<!--没认证-->
+<span shiro:notAuthenticated="">没认证展示</span>
+<br>
+<!--授权角色-->
+<span shiro:hasRole="admin">
+    this is admin
+</span>
+<br>
+<!--授权资源-->
+<span shiro:hasPermission="user:*:01">
+    具有用户模块权限
+</span>
+</body>
+</html>
